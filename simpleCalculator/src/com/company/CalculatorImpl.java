@@ -12,13 +12,13 @@ import static com.company.ReversePolishNotationImpl.isOperator;
 */
 public class CalculatorImpl implements Calculator {
 
+
     /**
      * Method calculate executed mathematical operations like addition, subtraction, division
      * and multiplication.
      * @param rpn given string representation of a reverse polish notation.
      * @return result of mathematical operations as double value.
      */
-    @Override
     public double calculate(Deque<String> rpn){
         double firstDigit, secondDigit;
         char firstChar;
@@ -36,7 +36,7 @@ public class CalculatorImpl implements Calculator {
                     firstDigit *= secondDigit;
                 }else if(firstChar == DIVISION.symbol) {
                     if (secondDigit == 0) {
-                        throw new ArithmeticException("Division by zero");
+                        throw new ArithmeticException("Division by zero are not allowed!");
                     }
                     firstDigit /= secondDigit;
                 }
@@ -45,7 +45,6 @@ public class CalculatorImpl implements Calculator {
             }
             stack.push(firstDigit);
         }
-
         return stack.pop();
     }
 }
