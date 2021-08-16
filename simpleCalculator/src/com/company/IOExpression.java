@@ -1,5 +1,5 @@
 package com.company;
 
-public interface IOexpression {
+public interface IOExpression {
     void resultOfCalculation(double value);
 }

@@ -6,11 +6,11 @@ import java.util.Scanner;
  *  Class IOexpressionImpl works with console, allows you to get a string expression that needs to calculate.
  *  And it also allows you to output result of the execution.
  */
-public class IOexpressionImpl implements IOexpression {
+public class IOExpressionImpl implements IOExpression {
     Scanner input = new Scanner(System.in);
     public String inputExp;
 
-    public IOexpressionImpl() {
+    public IOExpressionImpl() {
         System.out.println("Simple calculator." +
                 "\nUse only Digits from 0 to 9,a dot as a separator, if it needs," +
                 "and mathematical symbols +, / , - , * ." +
