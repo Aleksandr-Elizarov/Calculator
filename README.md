@@ -25,4 +25,4 @@ Whitespaces or other charachters are not allowed and will rise an exception.
 
 ## How the app works
 1. First, you get a greeting, as in the example below:
-![GreetingCalculator](https://github.com/Aleksandr-Elizarov/Calculator/main/images/GreetingCalculator.png)
+![GreetingCalculator](images/GreetingCalculator.png)
