@@ -11,6 +11,7 @@ public class ReversePolishNotationImpl implements ReversePolishNotation {
 
     /**
      * Method only create a reverse polish notation.
+     *
      * @param input - string that passed to method.
      * @return string representation of the reverse polish notation for next step.
      */
@@ -21,18 +22,19 @@ public class ReversePolishNotationImpl implements ReversePolishNotation {
         StringBuilder number = new StringBuilder("");
         for (int i = 0; i < input.length(); i++) {
             charInput = input.charAt(i);
-            if (isOperator(charInput) ) {
+            if (isOperator(charInput)) {
                 stackOut.add(String.valueOf(number));
                 number.delete(0, number.length());
-                if(stackOperations.isEmpty()){
+                if (stackOperations.isEmpty()) {
                     stackOperations.push(charInput);
-                }else if (getPriority(charInput) <= getPriority(stackOperations.getFirst())){
+                } else if (getPriority(charInput) <= getPriority(stackOperations.getFirst())) {
                     stackOut.add(String.valueOf(stackOperations.pop()));
-                    if(!stackOperations.isEmpty() && getPriority(charInput) == getPriority(stackOperations.getFirst())){
+                    if (!stackOperations.isEmpty() && getPriority(charInput)
+                            == getPriority(stackOperations.getFirst())) {
                         stackOut.add(String.valueOf(stackOperations.pop()));
                     }
                     stackOperations.push(charInput);
-                }else {
+                } else {
                     stackOperations.push(charInput);
                 }
             } else {
@@ -48,13 +50,15 @@ public class ReversePolishNotationImpl implements ReversePolishNotation {
     }
 
     /**
-     * The method checks the entered character for the presence in the list of allowed characters.
+     * The method checks the entered character for the presence in the list
+     * of allowed characters.
+     *
      * @param c - is entered character.
      * @return true, if entered character contains in enum ConstantsForCalculator.
      */
     public static boolean isOperator(char c) {
         for (ConstantsForCalculator constants : ConstantsForCalculator.values()) {
-            if(c == constants.symbol){
+            if (c == constants.symbol) {
                 return true;
             }
         }
@@ -63,12 +67,13 @@ public class ReversePolishNotationImpl implements ReversePolishNotation {
 
     /**
      * The method allows to get priority of the current character.
+     *
      * @param op - is character that priority we need to get.
      * @return priority from the enum ConstantsForCalculator of this character.
      */
     private static byte getPriority(char op) {
-        for(ConstantsForCalculator constants : ConstantsForCalculator.values()){
-            if(constants.symbol == op){
+        for (ConstantsForCalculator constants : ConstantsForCalculator.values()) {
+            if (constants.symbol == op) {
                 return (byte) constants.priority;
             }
         }

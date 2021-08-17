@@ -13,7 +13,7 @@ class ReversePolishNotationImplTest {
     ReversePolishNotation reversePolishNotation = new ReversePolishNotationImpl();
 
     @Test
-    void createRPN_shouldParseInputString_toReversePolishNotationRepresentation(){
+    void createRPN_shouldParseInputString_toReversePolishNotationRepresentation() {
         List<Deque<String>> createdRPN = new ArrayList<>();
         createdRPN.add(new ArrayDeque<>(Arrays.asList("3", "4", "+")));
         createdRPN.add(new ArrayDeque<>(Arrays.asList("2", "7", "*", "5", "-")));
@@ -22,7 +22,7 @@ class ReversePolishNotationImplTest {
         inputString.add("3+4");
         inputString.add("2*7-5");
         inputString.add("3/4+8*2");
-        for(String line : inputString){
+        for (String line : inputString) {
             assertEquals((createdRPN.get(inputString.indexOf(line))).toString(), (reversePolishNotation.createRPN(line)).toString());
         }
     }
@@ -34,6 +34,7 @@ class ReversePolishNotationImplTest {
         assertTrue(ReversePolishNotationImpl.isOperator('/'));
         assertTrue(ReversePolishNotationImpl.isOperator('*'));
     }
+
     @Test
     void isOperator_shouldReturnFalse() {
         assertFalse(ReversePolishNotationImpl.isOperator('%'));

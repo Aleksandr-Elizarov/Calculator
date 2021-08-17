@@ -27,14 +27,15 @@ class CalculatorImplTest {
         currentRPN.add(new ArrayDeque<>(Arrays.asList("2", "7", "*", "5", "-")));
         currentRPN.add(new ArrayDeque<>(Arrays.asList("3", "4", "/", "8", "2", "*", "+")));
         currentRPN.add(new ArrayDeque<>(Arrays.asList("1", "7", "3", "*", "2", "/", "-", "7", "8", "*", "-")));
-        for(Deque<String> rpn : currentRPN){
+        for (Deque<String> rpn : currentRPN) {
             assertEquals(actualValues.get(currentRPN.indexOf(rpn)), calculator.calculate(rpn));
         }
 
     }
+
     @Test
-    public void calculator_shouldThrowException_onDivisionByZero(){
+    public void calculator_shouldThrowException_onDivisionByZero() {
         assertThrows(ArithmeticException.class,
-                ()->calculator.calculate(new ArrayDeque<>(Arrays.asList("3", "0", "/"))));
+                () -> calculator.calculate(new ArrayDeque<>(Arrays.asList("3", "0", "/"))));
     }
 }
