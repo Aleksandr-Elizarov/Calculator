@@ -28,14 +28,14 @@ Whitespaces or other charachters are not allowed and will rise an exception.
 ![GreetingCalculator](images/GreetingCalculator.png)
 
 2. Second, you should enter your expression, that you need to calculate.  
-for example: ***2*273333.295-7000000/5+1234567.89***
+for example: ***2\*273333.295-7000000/5+1234567.89***
 ![EnteredExpression](images/EnteredExpression.png)
 
 3. Please press Enter key. And you will see the result of the calculation. 
 ![CalculationResult](images/CalculationResult.png)
 
-4.1. If you need to exit from app enter 'q' key on keyboard.
-![Quit](Quit.png)
+4.1. If you need to exit from application enter 'q' key on keyboard.
+![Quit](images/Quit.png)
 
 4.2. Else you need to repeat the calculations enter a new expression.
 ![NewCalculation](images/NewCalculation.png)
