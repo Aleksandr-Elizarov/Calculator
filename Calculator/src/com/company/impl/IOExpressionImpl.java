@@ -1,4 +1,6 @@
-package com.company;
+package com.company.impl;
+
+import com.company.IOExpression;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -9,14 +11,18 @@ import java.util.Scanner;
  */
 public class IOExpressionImpl implements IOExpression {
     public String inputExp;
-    public static boolean start = true;
+    public boolean start = true;
 
     public IOExpressionImpl() {
         System.out.println("\nSimple calculator." +
-                "\nUse only Digits from 0 to 9,a dot as a separator," +
-                " if it needs, and mathematical symbols +, / , - , * ." +
+                "\nPlease use Digits from 0 to 9 and a dot as a separator for" +
+                " real numbers." +
+                "\nMathematical operations +, / , - , *  and left ) or right " +
+                "( parentheses." +
+                "\nTake negative numbers in parentheses, like: (-3)*" +
+                "(-7.45)." +
                 "\nPlease enter the expression to calculate: ");
-        inputExp = new Scanner(System.in).nextLine();
+        createNewCommandLine();
         if (inputExp == null || inputExp.isEmpty()) {
             throw new IllegalArgumentException("You do not enter expression!");
         }
@@ -37,9 +43,17 @@ public class IOExpressionImpl implements IOExpression {
         System.out.println("Result of the expression: " + value +
                 "\nIf you need to calculate another expression," +
                 " please enter it. For quit, enter q.");
+        createNewCommandLine();
+    }
+
+    /**
+     * Method creates a new line for the entering the expression.
+     */
+    public void createNewCommandLine() {
         inputExp = new Scanner(System.in).nextLine();
         if (inputExp.toLowerCase(Locale.ROOT).equals("q")) {
             System.exit(0);
         }
+
     }
 }
