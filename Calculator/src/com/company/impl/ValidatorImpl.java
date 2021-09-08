@@ -21,7 +21,7 @@ public class ValidatorImpl implements Validator {
      * dot or mathematical symbols(+ ,- ,/ ,*) are at the beginning
      * of the expression.
      */
-    public static final String ERROR_AT_THE_BEGINNING = "^[+/*.]";
+    public static final String ERROR_AT_THE_BEGINNING = "^[-+/*.]";
     /**
      * two or more consecutive characters (dot,+ ,- ,/ ,*) are in the
      * expression.

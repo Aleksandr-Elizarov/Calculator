@@ -7,13 +7,13 @@ import com.company.impl.ValidatorImpl;
 
 public class Main {
     public static void main(String[] args) {
-        IOExpressionImpl exp = new IOExpressionImpl();
+        IOExpression exp = new IOExpressionImpl();
         Validator validator = new ValidatorImpl();
         ReversePolishNotation rpn = new ReversePolishNotationImpl();
         Calculator calc = new CalculatorImpl();
-        while (exp.start) {
-            if (validator.validate(exp.inputExp)) {
-                exp.resultOfCalculation(calc.calculate(rpn.createRPN(exp.inputExp)));
+        while (true) {
+            if (validator.validate(exp.getInputExp())) {
+                exp.resultOfCalculation(calc.calculate(rpn.createRPN(exp.getInputExp())));
             } else {
                 exp.createNewCommandLine();
             }
