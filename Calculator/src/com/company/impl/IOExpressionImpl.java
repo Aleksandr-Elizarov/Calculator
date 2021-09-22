@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class IOExpressionImpl implements IOExpression {
     private String inputExp;
-    private static final String INVITATION = "\nSimple calculator." +
+    private static final String INVITATION = "Simple calculator." +
             "\nPlease use Digits from 0 to 9 and a dot as a separator for" +
             " real numbers." +
             "\nMathematical operations +, / , - , *  and left ) or right " +

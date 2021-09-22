@@ -20,7 +20,8 @@ If you run application from the IDE (Intellij idea or els.),
 You can use a limited number of characters:  
 Operations: +, -, /, *  
 Numbers: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9  
-Use dot (example 12.345) as separator in real numbers.  
+Use dot (example 12.345) as separator in real numbers.
+You can use braces "(" or ")" for nagative numbers (example (-2,75)-(-7) )
 Whitespaces or other charachters are not allowed and will rise an exception.
 
 ## How it works
